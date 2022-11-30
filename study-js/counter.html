@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Counter</title>
+    <script type="application/javascript">
+        // 1. Event-Driven Programming
+        // 2. Event --> Call-back functions
+        // 3. Async Functions
+        // 4. Object-Based Programming
+        // 5. Object-Oriented Programming
+        // 6. Functional Programming
+        let kate = {}
+        kate.identity = "2";
+
+        x = { // object
+            "identity": "1",
+            "fullname": "jack bauer",
+            "email": "jack@example.com"
+        }
+        class Account {
+            constructor(iban,balance) {
+                this.iban = iban;
+                this.balance = balance;
+            }
+            withdraw = (amount) =>{
+                if (amount <= 0)
+                    throw "Amount must be positive";
+
+                if (amount > this.balance)
+                    throw "Your balance does not cover your expenses";
+                this.balance -= amount;
+            }
+        }
+        acc = new Account("tr1", 10000);
+        acc.balance -= 1000000;
+        acc.withdraw(1000000);
+        class Customer {
+            constructor(identity, fullname, email) {
+                this.identity = identity;
+                this.fullname = fullname;
+                this.email = email;
+                // this.sayHello = this.sayHello.bind(this);
+            }
+
+            sayHello = () => {
+                console.log(this);
+                console.log(`Hello, ${this.fullname}!`)
+            }
+        }
+        class GoldCustomer extends Customer {}
+        let jack = new Customer("1", "jack bauer", "jack@example.com")
+        jack.sayHello()
+        window.fullname = "kate austen"
+        window.setInterval(jack.sayHello, 1000);
+        window.onload = () => { // call-back function
+            let counter = 0;
+            // DOM API
+            let spanCounter = document.querySelector("#counter");
+            let timerId = setInterval(() => { // functional programming
+                counter++;
+                spanCounter.innerHTML = counter.toString();
+            }, 1000);
+            // clearInterval(timerId);
+        }
+    </script>
+</head>
+<body>
+<div>
+    <h3>Counter: <span id="counter">0</span></h3>
+</div>
+</body>
+</html>

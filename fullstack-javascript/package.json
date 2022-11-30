@@ -1,0 +1,29 @@
+{
+  "name": "fullstack-javascript",
+  "version": "1.0.0",
+  "main": "service.js",
+  "scripts": {
+    "middleware": "nodemon ./ --exec babel-node service.js",
+    "ws-client": "node websocket-node-client.js"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "nodemon": "^2.0.14",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12",
+    "body-parser": "^1.19.0",
+    "debug": "^4.3.2",
+    "morgan": "^1.10.0",
+    "swagger-ui-express": "^4.1.6",
+    "socket.io": "2.4.1",
+    "socket.io-client": "2.4.0"
+  },
+  "keywords": [
+    "MicroService",
+    "Mongoose",
+    "Express"
+  ],
+  "author": "Binnur Kurt <binnur.kurt@gmail.com>",
+  "license": "MIT"
+}
